@@ -16,6 +16,9 @@ ENTRYPOINT ["/usr/bin/dumb-init", "--", "/usr/local/bin/clone"]
 ARG DRONE_GIT_VERSION
 LABEL org.opencontainers.image.version="${DRONE_GIT_VERSION}"
 
+# required to run scripts via bash instead of dash
+RUN ln -sf /bin/bash /bin/sh
+
 COPY src/ /
 
 ARG DRONE_GIT_VERSION

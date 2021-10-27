@@ -23,7 +23,7 @@ ENV `
 
 ADD src/ c:/
 
-RUN setx /M PATH "%PATH%;C:\Program Files\PowerShell;c:\bin"
+RUN setx /M PATH "%PATH%;c:\bin"
 SHELL ["pwsh", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
 CMD [ "pwsh", "C:\\bin\\clone.ps1" ]

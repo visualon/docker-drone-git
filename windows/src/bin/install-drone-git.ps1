@@ -14,4 +14,4 @@ $url = "https://github.com/drone/drone-git/archive/refs/tags/v$Version.zip"
 Invoke-WebRequest $url -OutFile $file
 Expand-Archive -Path $file -DestinationPath $app
 
-Copy-Item "$app\$Name-$($Version)\windows\*.ps1" c:\
+Copy-Item "$app\$Name-$($Version)\windows\*.ps1" c:\bin\

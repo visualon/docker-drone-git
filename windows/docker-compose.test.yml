@@ -2,4 +2,4 @@ services:
   sut:
     image: "${IMAGE}"
     # entrypoint: cmd /c
-    command: git --version
+    command: git --version && IF NOT EXIST c:/bin/clone.ps1 exit /B 1

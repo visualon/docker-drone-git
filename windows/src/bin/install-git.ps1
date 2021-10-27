@@ -31,7 +31,7 @@ Invoke-WebRequest $url -OutFile $file
 New-Item -Path $app -ItemType "directory" | Out-Null
 Expand-Archive -Path $file -DestinationPath $app
 
-[Environment]::SetEnvironmentVariable("Path","c:\git;$([Environment]::GetEnvironmentVariable("Path", "System"))", "System")
+[Environment]::SetEnvironmentVariable("Path","c:\git;$([Environment]::GetEnvironmentVariable("Path", "Machine"))", "Machine")
 
 $env:Path += ";c:\git"
 

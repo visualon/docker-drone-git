@@ -93,6 +93,8 @@ jobs:
       - name: Build the Docker image
         run: docker buildx bake --progress plain test
 
+      - run: docker image ls
+
       - name: Test run
         run: docker-compose --file docker-compose.test.yml run sut
         working-directory: ./linux

@@ -17,7 +17,9 @@ ARG DRONE_GIT_VERSION
 LABEL org.opencontainers.image.version="${DRONE_GIT_VERSION}"
 
 # required to run scripts via bash instead of dash
-RUN ln -sf /bin/bash /bin/sh
+RUN set ex; \
+  ln -sf /bin/bash /bin/sh; \
+  git config --system init.defaultBranch main
 
 COPY src/ /
 

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["visualon/renovate-config", "visualon/renovate-config:automergePatch", ":automergeMinor"],
+  "labels": ["deps"],
+  "digest": {
+    "extends": ["schedule:daily"]
+  },
+  "packageRules": [
+    {
+      "description": "Override git versioning for windows",
+      "matchPackageNames": ["git"],
+      "matchPaths": ["windows/**"],
+      "versioning": "regex:^v(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(?<compatibility>\\.windows\\.)(?<build>\\d+)$"
+    }
+  ]
+}

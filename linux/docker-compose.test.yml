@@ -1,0 +1,6 @@
+services:
+  sut:
+    image: "${IMAGE}"
+    entrypoint: ["dumb-init", "--"]
+    command: sh -c 'set ex; git --version; command -v clone'
+

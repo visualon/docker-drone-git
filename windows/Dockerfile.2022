@@ -1,0 +1,35 @@
+# escape=`
+
+# renovate: datasource=github-releases lookupName=git-for-windows/git
+ARG GIT_VERSION=v2.33.1.windows.1
+
+# renovate: datasource=github-releases depName=drone-git lookupName=drone/drone-git
+ARG DRONE_GIT_VERSION=v1.2.1
+
+FROM mcr.microsoft.com/powershell:7.1.5-nanoserver-ltsc2022
+
+USER ContainerAdministrator
+
+LABEL maintainer="Michael Kriese <michael.kriese@visualon.de>" `
+  org.opencontainers.image.authors="Michael Kriese <michael.kriese@visualon.de>" `
+  org.opencontainers.image.licenses="MIT" `
+  org.opencontainers.image.source="https://github.com/visualon/docker-drone-git" `
+  org.opencontainers.image.url="https://github.com/visualon/docker-drone-git"
+
+ENV `
+  POWERSHELL_TELEMETRY_OPTOUT=1 `
+  DOTNET_CLI_TELEMETRY_OPTOUT=1 `
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
+
+ADD src/ c:/
+
+RUN setx /M PATH "%PATH%;C:\Program Files\PowerShell;c:\bin"
+SHELL ["pwsh", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
+
+CMD [ "pwsh", "C:\\bin\\clone.ps1" ]
+
+ARG GIT_VERSION
+RUN install-git.ps1
+
+ARG DRONE_GIT_VERSION
+RUN install-drone-git.ps1

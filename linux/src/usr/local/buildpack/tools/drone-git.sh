@@ -17,3 +17,6 @@ curl -sL $URL -o ${TARGET}
 tar -C /tmp -xzf ${TARGET}
 
 cp /tmp/drone-git-${TOOL_VERSION}/posix/clone* /usr/local/bin/
+
+ln -sf /bin/bash /bin/sh
+git config --system init.defaultBranch main

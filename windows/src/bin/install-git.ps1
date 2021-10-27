@@ -31,9 +31,9 @@ Invoke-WebRequest $url -OutFile $file
 New-Item -Path $app -ItemType "directory" | Out-Null
 Expand-Archive -Path $file -DestinationPath $app
 
-[Environment]::SetEnvironmentVariable("Path","c:\git;$([Environment]::GetEnvironmentVariable("Path", "Machine"))", "Machine")
+[Environment]::SetEnvironmentVariable("Path","$([Environment]::GetEnvironmentVariable("Path", "Machine"));c:\git\cmd", "Machine")
 
-$env:Path += ";c:\git"
+$env:Path += ";c:\git\cmd"
 
 exec { git config --system core.autocrlf input }
 exec { git config --system core.longpaths true }

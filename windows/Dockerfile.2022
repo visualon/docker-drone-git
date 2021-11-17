@@ -1,6 +1,6 @@
 # escape=`
 
-# renovate: datasource=github-releases lookupName=git-for-windows/git
+# renovate: datasource=github-releases depName=git-for-windows lookupName=git-for-windows/git
 ARG GIT_VERSION=v2.33.1.windows.1
 
 # renovate: datasource=github-releases depName=drone-git lookupName=drone/drone-git

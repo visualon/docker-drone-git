@@ -24,7 +24,7 @@ COPY --from=buildpack /usr/local/buildpack/ /usr/local/buildpack/
 RUN install-buildpack
 
 # renovate: datasource=github-tags lookupName=git/git
-RUN install-tool git v2.35.0
+RUN install-tool git v2.35.1
 
 COPY src/ /
 

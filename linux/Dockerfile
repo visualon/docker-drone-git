@@ -3,7 +3,7 @@
 ARG DRONE_GIT_VERSION=v1.2.1
 
 
-FROM ghcr.io/containerbase/buildpack:3.12.0@sha256:6b3e137a4dc3e92c5488d9238f96b05419359fcc8200f8ee749bb3cdde90e52e as buildpack
+FROM ghcr.io/containerbase/buildpack:3.12.4@sha256:3c390d60321ee6678d88460c69f3a647556e0b65cc70ff6e30683a9804f59a2a as buildpack
 
 FROM ubuntu:20.04@sha256:bea6d19168bbfd6af8d77c2cc3c572114eb5d113e6f422573c93cb605a0e2ffb
 

@@ -2,7 +2,7 @@
 
 set -eo pipefail
 
-FROM=$(cat linux/Dockerfile | grep DRONE_GIT_VERSION)
+FROM=$(grep -q DRONE_GIT_VERSION linux/Dockerfile)
 SEMVER_REGEX="=v?(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(-[a-z0-9]+)?"
 
 
@@ -17,5 +17,5 @@ patch=${BASH_REMATCH[3]}
 
 
 VERSION="${major}.${minor}.${patch}"
-echo "VERSION=${VERSION}" >> $GITHUB_ENV
+echo "VERSION=${VERSION}" >> "$GITHUB_ENV"
 echo "Found version: ${VERSION}"

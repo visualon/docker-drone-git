@@ -36,11 +36,11 @@ Expand-Archive -Path $file -DestinationPath $app
 $env:Path += ";c:\git\cmd"
 
 Write-Output "-------------------------------"
-Get-Command git
+Get-Command git | Format-List
 git --version
 Write-Output "-------------------------------"
 if ($LASTEXITCODE -ne 0){
-  throw "Unexpected error"
+  throw "Unexpected exitcode: $LASTEXITCODE"
 }
 
 exec { git config --system core.autocrlf input }

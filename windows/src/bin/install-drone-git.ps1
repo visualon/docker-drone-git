@@ -1,6 +1,6 @@
 . $PSScriptRoot\..\lib\index.ps1
 
-$Name='drone-git'
+$Name = 'drone-git'
 $Version = $env:DRONE_GIT_VERSION
 
 if ( $Version -like 'v*') {

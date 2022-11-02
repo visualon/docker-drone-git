@@ -50,7 +50,7 @@ function Invoke-NativeApplicationSafe {
 }
 
 function Test-CalledFromPrompt {
-  (Get-PSCallStack)[-2].Command -eq "prompt"
+    (Get-PSCallStack)[-2].Command -eq "prompt"
 }
 
 Set-Alias -Name exec -Value Invoke-NativeApplication

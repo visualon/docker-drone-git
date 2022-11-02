@@ -6,7 +6,7 @@ ARG GIT_VERSION=v2.37.3.windows.1
 # renovate: datasource=github-releases depName=drone-git lookupName=drone/drone-git
 ARG DRONE_GIT_VERSION=v1.2.1
 
-FROM mcr.microsoft.com/powershell:7.2-nanoserver-ltsc2022
+FROM mcr.microsoft.com/powershell:7.2-nanoserver-ltsc2022@sha256:5bea626436ff5d06556d90d9a8ccb1dbff45beebd5ab6ff6f4b3b8b331aa7664
 
 USER ContainerAdministrator
 

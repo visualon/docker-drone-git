@@ -18,10 +18,11 @@ jobs:
     runs-on: windows-${{ matrix.os }}
 
     timeout-minutes: 60
+    continue-on-error: true
 
     strategy:
       matrix:
-        os: [2019] #,2022]
+        os: [2019,2022]
 
     env:
       BASE: ${{ matrix.os }}

@@ -35,7 +35,13 @@ Expand-Archive -Path $file -DestinationPath $app
 
 $env:Path += ";c:\git\cmd"
 
+Write-Output "-------------------------------"
+Get-Command git
 git --version
+Write-Output "-------------------------------"
+if ($LASTEXITCODE -ne 0){
+  throw "Unexpected error"
+}
 
 exec { git config --system core.autocrlf input }
 exec { git config --system core.longpaths true }

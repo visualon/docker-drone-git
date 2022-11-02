@@ -24,7 +24,7 @@ if ($r -eq ".1") {
 
 $file = "$tmp\$Name.zip"
 $app = "c:\$Name"
-$url = "https://github.com/git-for-windows/git/releases/download/v$Version/MinGit-${v}${r}-busybox-64-bit.zip"
+$url = "https://github.com/git-for-windows/git/releases/download/v$Version/MinGit-${v}${r}-64-bit.zip"
 
 Invoke-WebRequest $url -OutFile $file
 

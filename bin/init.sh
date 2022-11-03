@@ -2,7 +2,7 @@
 
 set -eo pipefail
 
-FROM=$(grep -q DRONE_GIT_VERSION linux/Dockerfile)
+FROM=$(grep DRONE_GIT_VERSION linux/Dockerfile)
 SEMVER_REGEX="=v?(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(-[a-z0-9]+)?"
 
 

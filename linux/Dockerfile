@@ -5,7 +5,7 @@ ARG DRONE_GIT_VERSION=v1.2.1
 
 FROM ghcr.io/containerbase/buildpack:5.2.3@sha256:dfdd081f2063c79a4adfbac342857b6f2d5637d7a2249bed4e48997437c02aa1 as buildpack
 
-FROM ubuntu:22.04@sha256:4b1d0c4a2d2aaf63b37111f34eb9fa89fa1bf53dd6e4ca954d47caebca4005c2
+FROM ubuntu:22.04@sha256:27cb6e6ccef575a4698b66f5de06c7ecd61589132d5a91d098f7f3f9285415a9
 
 LABEL maintainer="Michael Kriese <michael.kriese@visualon.de>" \
     org.opencontainers.image.authors="Michael Kriese <michael.kriese@visualon.de>" \

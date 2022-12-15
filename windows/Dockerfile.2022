@@ -1,7 +1,7 @@
 # escape=`
 
 # renovate: datasource=github-releases depName=git-for-windows lookupName=git-for-windows/git
-ARG GIT_VERSION=v2.37.3.windows.1
+ARG GIT_VERSION=v2.39.0.windows.1
 
 # renovate: datasource=github-releases depName=drone-git lookupName=drone/drone-git
 ARG DRONE_GIT_VERSION=v1.2.1
